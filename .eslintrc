@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "comma-dangle": [
+      "off"
+    ]
+  },
+  "globals": {
+    "document": true,
+    "window": true
+  }
+}
