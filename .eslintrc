@@ -3,10 +3,21 @@
   "rules": {
     "comma-dangle": [
       "off"
+    ],
+    "arrow-body-style": [
+      "off"
+    ],
+    "array-callback-return": [
+      "off"
+    ],
+    "object-curly-newline": [
+      "off"
+    ],
+    "class-methods-use-this": [
+      "off"
     ]
   },
-  "globals": {
-    "document": true,
-    "window": true
+  "env": {
+    "browser": true
   }
 }
