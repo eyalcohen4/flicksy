@@ -1,5 +1,5 @@
 {
-  "name": "flicker-app",
+  "name": "flicksy",
   "version": "1.0.0",
   "description": "A small Flicker API UI",
   "main": "src/index.js",
@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "parcel ./src/index.html -p 4600",
     "build": "parcel build src/index.html",
-    "deploy": "cd dist && now --name=flicksy --alias=flicksy"
+    "deploy": "now dist --public && now alias && now rm $npm_package_now_name --safe --yes"
   },
   "keywords": [],
   "author": "Eyal Cohen <eyalcohen4.ec@gmail.com>",
@@ -15,7 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-runtime": "^7.1.0",
-    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
     "babel-runtime": "^6.26.0",
     "eslint": "5.7.0",
     "eslint-config-airbnb-base": "13.1.0",
@@ -24,6 +24,12 @@
     "parcel": "1.10.3",
     "parcel-bundler": "1.10.3"
   },
+  "now": {
+    "name": "flicksy",
+    "alias": [
+      "flicksy.now.sh"
+    ]
+  },
   "engines": {
     "node": "> 8"
   },
@@ -31,10 +37,5 @@
     "last 10 Chrome version",
     "last 10 Firefox version",
     "last 10 Edge version"
-  ],
-  "dependencies": {
-    "@babel/runtime-corejs2": "^7.1.2",
-    "axios": "^0.18.0",
-    "request": "^2.88.0"
-  }
+  ]
 }

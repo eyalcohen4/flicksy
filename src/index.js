@@ -15,3 +15,5 @@ async function App() {
 }
 
 App();
+
+export default App;
