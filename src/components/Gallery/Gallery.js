@@ -8,7 +8,7 @@ function Gallery({ photos }) {
 
   return `
     <div class="gallery">
-      ${renderPhotos(photos)}
+      ${renderPhotos()}
     </div>
     `;
 }

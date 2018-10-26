@@ -1,6 +1,7 @@
 /**
  * A really simple Flux based store - we're holding a state object which can be tracked by a subscription.
- * The subscriptions are a key-value object which hold a name:function, which will be called on each state change.
+ * The subscriptions are a key-value object which hold a name:function
+ * and each one of them will be called on every state change.
  */
 class Store {
   constructor() {

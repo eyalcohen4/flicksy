@@ -1,6 +1,3 @@
-/* global fetch */
-/* global document */
-
 import requiredParam from './requiredParam';
 import buildElement from './buildElement';
 
