@@ -11,6 +11,7 @@ function renderer() {
   try {
     render(Gallery({ photos: PhotosManager.state.photos }), main);
   } catch (error) {
+    console.log(error);
     render(AppError(), main);
   }
 }
@@ -23,7 +24,7 @@ async function Main() {
   }
 
   PhotosManager.subscribe((state, prevState) => {
-    if (state.photosLink !== prevState.photosLink) {
+    if (state.photos !== prevState.photos) {
       renderer();
     }
   }, 'main');

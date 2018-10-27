@@ -8,9 +8,8 @@
     # Build for production
     $ npm build
 
-    # Run production build
-    $ cd dist/
-    $ http-server
+    # Deploy dist/ folder to flicksy.now.sh
+    $ npm run deploy
 
 ## Tools
 
@@ -22,34 +21,34 @@
 ###### No 3rd party packages used in the code
 
 
-
 ## Architecture
-This app is divided to 3 main entities:
+We can separate the app into 3 main entities:
 components, store, and a manager.
 
 ### Components
 The components are just functions which generate an HTML template with data,
-and might hold a subscription to the manager.
+and might hold a subscription to the manager store.
 
-Each High-Level (Gallery and Header) component is responsible to
-a. call the render util function, which insert the template to a given parent.
+Each High-Level (Gallery and Header) component is responsible to:
+
+a. call the render util function, which inserts the template to a given parent.
+
 b. subscribe to update and decide if we need to rerender
 
 We have 5 components:
-1. Main (initiate the main view and call for the data)
+1. Main
 2. Header
 3. Gallery
 4. Gallery Item
 5. AppError
 
 ### Store
-The store is a simple Flux based state-managment,
-which in our case solve the issue of syncing the data with the UI functions,
+The store is a simple class for state management.
 
-and provide us seperation of concerns.
-The store hold a state object and subscription that called each state-change.
+It solves the issue of syncing the data with the UI, in a way that separates our concerns,
+by holding state object and subscription that called after every change.
 
 ### Manager
-The manager (PhotoManager in this app) is holding most of the logic:
+The manager (PhotoManager in this app) extend the store, and holding most of the app logic:
 
-he recives data from the API, process it and setting it to the state.
+Receiving data from the API, process it, and setting it to the state.

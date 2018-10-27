@@ -12,8 +12,18 @@ function renderer({ authorName }) {
     <div>
       <h1>Flicksy</h1>
       <h2 class="header__author">${authorName}</h2>
-    </div>
-    <button class="header__back" id="back-to-feed">${authorName ? 'Back To Feed' : 'Reload Feed'}</button>
+      </div>
+      <div>
+        <div class="header__upload-image">
+          <input type="file" accept="image/*" id="new-image" class="header__upload-image__input" />
+          <label for="new-image" type="file" accept="image/*" id="new-file" class="header__button header__button--upload">
+          🖼️ Upload Image
+          </label>
+        </div>
+        <button class="header__button header__button--back" id="back-to-feed" style="background: ${authorName ? '#000000' : '#0336ff'}">  
+          ${authorName ? '👈 Back To Feed' : '♻️ Reload Feed'}
+        </button>
+      </div>
     </header>
   `;
 

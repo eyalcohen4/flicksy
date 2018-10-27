@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "parcel ./src/index.html -p 4600",
-    "build": "parcel build src/index.html",
-    "deploy": "now dist --public && now alias && now rm $npm_package_now_name --safe --yes"
+    "build": "parcel build src/index.html --out-dir flicksy",
+    "deploy": "now flicksy --public && now alias && now rm $npm_package_now_name --safe --yes"
   },
   "keywords": [],
   "author": "Eyal Cohen <eyalcohen4.ec@gmail.com>",

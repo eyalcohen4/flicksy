@@ -54,7 +54,6 @@ class Api {
     };
   }
 
-
   getFeed() {
     return new Promise((resolve, reject) => {
       this.sendJsonpRequest({

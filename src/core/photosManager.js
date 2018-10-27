@@ -28,10 +28,10 @@ class PhotosManager extends Store {
 
   processPhotos(items) {
     return items.map((item) => {
-      const { media: { m }, date_taken } = item;
+      const { media: { m }, date_taken, isLocal, date } = item;
 
       const author = this.parseAuthor(item.author);
-      return { ...item, img: m, date: date_taken, author };
+      return { ...item, img: m, date: isLocal ? date : date_taken, author };
     });
   }
 
@@ -80,6 +80,25 @@ class PhotosManager extends Store {
       photosLink: link,
       currentAuthorId: '',
       currentAuthorName: ''
+    });
+  }
+
+  addLocalPhoto({ base64 }) {
+    const newPhoto = {
+      author: 'Me',
+      author_id: null,
+      link: null,
+      media: { m: base64 },
+      img: base64,
+      title: '',
+      date: new Date().toISOString(),
+      isLocal: true
+    };
+
+    const photos = [newPhoto, ...this.state.photos];
+
+    this.setState({
+      photos
     });
   }
 }

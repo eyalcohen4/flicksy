@@ -1,4 +1,3 @@
-
 .header {
   position: relative;
   display: flex;
@@ -21,26 +20,48 @@
   transform-origin: top left;
 }
 
-.header__back {
+.header__author {
+  max-width: 200px;
+  height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.header__upload-image__input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.header__button {
   z-index: 1;
   display: block;
   height: auto;
-  width: 80px;
-  margin: 0 10px;
+  width: 100%;
+  margin: 10px;
   padding: 10px 15px;
   border-radius: 30px;
   border: none;
   color: white;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14);
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  transition: all .2s ease-in;
+  cursor: pointer;
 }
 
-.header__author {
-  max-width: 200px;
-  height: 25px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.header__button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 20px 0px rgba(0, 0, 0, 0.14);
 }
 
+.header__button--upload {
+  background: #ff0266;
+}
 

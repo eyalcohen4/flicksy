@@ -1,7 +1,7 @@
 /**
- * A really simple Flux based store - we're holding a state object which can be tracked by a subscription.
- * The subscriptions are a key-value object which hold a name:function
- * and each one of them will be called on every state change.
+ * A really simple store for state managment:
+ * We're holding a state object which can be tracked by a subscription,
+ * Which called after every state change.
  */
 class Store {
   constructor() {
@@ -30,12 +30,11 @@ class Store {
     }
 
     const prevState = this.state;
-    // console.log('[Store.setState] prevState', prevState);
+
     this.state = {
       ...this.state,
       ...newState
     };
-    // console.log('[Store.setState] state', this.state);
 
     Object.keys(this.subscriptions).map((name) => {
       this.subscriptions[name](this.state, prevState);
